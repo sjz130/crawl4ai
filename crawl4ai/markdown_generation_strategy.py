@@ -91,6 +91,7 @@ class DefaultMarkdownGenerationStrategy(MarkdownGenerationStrategy):
 
         # Generate fit markdown if content filter is provided
         fit_markdown: Optional[str] = None
+        filtered_html: Optional[str] = None
         if content_filter:
             filtered_html = content_filter.filter_content(cleaned_html)
             filtered_html = '\n'.join('<div>{}</div>'.format(s) for s in filtered_html)
